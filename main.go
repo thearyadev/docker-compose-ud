@@ -86,7 +86,8 @@ func main() {
 			log.Printf("[WARN] %s does not have a compose file", file.Name())
 			continue
 		}
-
+		os.Chdir(filepath.Join(*dir, file.Name()))
 		action(file.Name())
+		os.Chdir("../")
 	}
 }
