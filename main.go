@@ -87,6 +87,7 @@ func main() {
 			continue
 		}
 		os.Chdir(filepath.Join(*dir, file.Name()))
+		log.Printf("[INFO] %s", file.Name())
 		action(file.Name())
 		os.Chdir("../")
 	}
